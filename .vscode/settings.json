@@ -1,0 +1,18 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        ".gitignore": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "yarn.lock": true,
+        "tsconfig.json": true,
+        "README.md": true,
+        "README.old.md": true,
+        "package.json": false,
+        "src/react-app-env.d.ts": true,
+        "public": true,
+        "node_modules": true,
+    }
+}
