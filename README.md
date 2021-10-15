@@ -50,6 +50,7 @@ Application created to facilitate the management of Nutcache Brasil employees.
 
 Submitted as part of the assessment for Front-End Software Engineer.
 
+[Online Demo](https://nutcachebrazil.liandrowesley.dev)
 
 ## 🔖 Layout
 
