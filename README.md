@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+<h1 align="center">
+    <img alt="PlantManager" title="PlantManager" src=".github/assets/logo.png" />
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-license">License</a>
+</p>
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+<p align="center">
+  <img alt="Moveit" src=".github/assets/cover.jpg">
+</p>
 
-### `yarn start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🧪 Technologies
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This project was developed using the following technologies and tools:
 
-### `yarn test`
+- [React JS](https://reactjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Jest](https://jestjs.io/pt-BR/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Getting started
 
-### `yarn build`
+Clone the project and access the folder
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+$ git clone https://github.com/liandro-wesley/nutcache-challenge-LiandroSilva.git && cd nutcache-challenge-LiandroSilva
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Follow the steps below
+```bash
+# Install the dependencies
+$ yarn or npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Start the project
+$ yarn start or npm run start
+```
+## 💻 Project
 
-### `yarn eject`
+Application created to facilitate the management of Nutcache Brasil employees.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Submitted as part of the assessment for Front-End Software Engineer.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🔖 Layout
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You can view the project layout through the link below:
 
-## Learn More
+- [Layout](https://www.figma.com/file/p3w9suQv56TwWidVW1b86m/NutCacheBrazilFrontend?node-id=1%3A2) 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Remembering that you need to have a [Figma](http://figma.com/) account to access it.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📝 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
+
+
+---
+
+Made with 💙 by [Liandro Wesley](https://www.liandrowesley.dev) 👋
