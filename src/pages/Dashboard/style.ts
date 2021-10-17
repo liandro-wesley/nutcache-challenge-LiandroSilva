@@ -44,7 +44,6 @@ export const DashboardHeaderGroup = styled.aside`
 
                 background-color: ${theme.colors.gray};
                 color: ${theme.colors.black};
-
                 border: none;
 
                 font-size: 2rem;
@@ -57,6 +56,7 @@ export const DashboardHeaderGroup = styled.aside`
                 &:nth-of-type(2) {
                     border-radius: 0 6px 6px 0;
                 }
+
                 &.active {
                     background-color: ${theme.colors.blue};
                     color: ${theme.colors.white};

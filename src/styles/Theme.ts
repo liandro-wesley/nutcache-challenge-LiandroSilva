@@ -22,10 +22,11 @@ export default {
         redLight: '#E97D8F',
         redLighter: '#FEECEB',
         yellow: '#F9DB6D',
-        green: '2CD37A',
+        green: '#2CD37A',
         gray: '#ECEEF0',
+        grayDarker: '#556877',
         black: '#333F48',
-        white: '#FFFFFF'
+        white: '#FFFFFF',
     },
     radius: {
         small: '4px',

@@ -9,7 +9,7 @@ export default interface Employees {
     email: string;
     cpf: number | string;
     team: string;
-    gender: Gender;
+    gender: string;
     birthDate: string;
     startDate: string;
 }

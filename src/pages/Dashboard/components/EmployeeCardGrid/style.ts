@@ -8,7 +8,7 @@ export const EmployeeCardContainer = styled.section`
         border: 1px solid ${theme.colors.gray};
         border-radius: 6px;
 
-        height: 270px;
+        height: 300px;
     `}
 `;
 
@@ -23,7 +23,7 @@ export const EmployeeCardContent = styled.article`
                 font-family: ${theme.font.family};
                 font-weight: ${theme.font.weight.normal};
 
-                color: #556877;
+                color: ${theme.colors.grayDarker};
                 margin-bottom: 0.5rem;
             }
             p {

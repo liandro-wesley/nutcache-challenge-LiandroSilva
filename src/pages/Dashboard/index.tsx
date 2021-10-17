@@ -12,6 +12,9 @@ import * as S from './style';
 import EmployeeCardGrid from './components/EmployeeCardGrid';
 import ReactTooltip from 'react-tooltip';
 import EmployeeCardRow from './components/EmployeeCardRow';
+import EmployeeModal from '../../components/EmployeeModal';
+import Employees from '../../interfaces/Employee';
+import { ButtonPrimary } from '../../components/Button/style';
 
 const MemoFiArrowRight = memo(FiArrowRight);
 const MemoFiGrid = memo(FiGrid);
@@ -22,11 +25,29 @@ const MemoReactTooltip = memo(ReactTooltip);
 
 const Dashboard = () => {
     const [typeOfView, setTypeOfView] = useState('grid');
+    const [typeModal, setTypeModal] = useState<'Create' | 'Edit' | 'Delete'>('Create');
+    const [show, setShow] = useState(false);
+    const [employeeInformation, setEmployeeInformation] = useState<Employees>();
     const { employees, loading, getAllEmployees } = useEmployee();
+
+    function openNewEmployeeModal() {
+        setShow(true);
+    }
+    function closeNewEmployeeModal() {
+        setShow(false);
+    }
+
+    function getEmployeeInformation(content: Employees) {
+        setEmployeeInformation(content);
+    }
+
+    function getTypeModal(type: 'Create' | 'Edit' | 'Delete') {
+        setTypeModal(type);
+    } 
 
     return(     
         <>
-            <Header />
+            <Header openNewEmployeeModal={openNewEmployeeModal} typeModal={getTypeModal} />
             <S.DashboardContainer>
                 {(employees.length !== 0 && loading === false) &&
                     <>
@@ -72,7 +93,10 @@ const Dashboard = () => {
                             <S.DashboardGridView>
                                 {
                                     employees.map((employee) => (
-                                        <EmployeeCardGrid 
+                                        <EmployeeCardGrid
+                                            getTypeModal={getTypeModal}
+                                            setEmployeeInformation={getEmployeeInformation}
+                                            openNewEmployeeModal={openNewEmployeeModal}
                                             key={employee._id} 
                                             content={employee} 
                                         />
@@ -103,12 +127,18 @@ const Dashboard = () => {
                         style={{display: `${loading ? 'none' : 'flex'}`}}
                     >
                         <p>Oops! Parece que não há funcionários registrados</p>
-                        <button>
+                        <ButtonPrimary onClick={openNewEmployeeModal}>
                             Registre agora mesmo 
                             <MemoFiArrowRight />
-                        </button>
+                        </ButtonPrimary>
                     </S.DashboardWithoutEmployees>
                 }
+                <EmployeeModal 
+                    employeeInformation={employeeInformation} 
+                    onCloseEmployeeModal={closeNewEmployeeModal} 
+                    show={show} 
+                    type={typeModal} 
+                />
             </S.DashboardContainer>
         </>
     );
