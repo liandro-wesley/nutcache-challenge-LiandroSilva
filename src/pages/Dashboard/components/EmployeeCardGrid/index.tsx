@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import ReactTooltip from 'react-tooltip';
 import Employees from '../../../../interfaces/Employee';
 import * as S from './style'
@@ -6,14 +6,19 @@ import * as S from './style'
 import { FiTrash2, FiEdit } from 'react-icons/fi';
 import { toMonthAndYear } from '../../../../utils/parsers';
 
+const MemoFiTrash2 = memo(FiTrash2);
+const MemoFiEdit = memo(FiEdit);
+const MemoReactTooltip = memo(ReactTooltip);
+
 type EmployeeCardProps = {
     content: Employees;
+    getEmployeedId: (id: string) => void;
     openNewEmployeeModal: () => void;
     setEmployeeInformation: (content: Employees) => void;
     getTypeModal: (type: 'Create' | 'Edit' | 'Delete') => void;
 }
 
-const EmployeeCardGrid = ({ content, openNewEmployeeModal, getTypeModal, setEmployeeInformation }: EmployeeCardProps) => {
+const EmployeeCardGrid = ({ content, openNewEmployeeModal, getTypeModal, setEmployeeInformation, getEmployeedId }: EmployeeCardProps) => {
     return(
         <S.EmployeeCardContainer>
             <S.EmployeeCardContent>
@@ -31,7 +36,7 @@ const EmployeeCardGrid = ({ content, openNewEmployeeModal, getTypeModal, setEmpl
                 </article>
                 <article>
                     <h2>Data em que foi contratado</h2>
-                    <p>{toMonthAndYear(content.startDate)}</p>
+                    <p>{toMonthAndYear(content?.startDate)}</p>
                 </article>
             </S.EmployeeCardContent>
             <S.EmployeeCardActions>
@@ -42,23 +47,26 @@ const EmployeeCardGrid = ({ content, openNewEmployeeModal, getTypeModal, setEmpl
                             getTypeModal('Edit');
                             openNewEmployeeModal();
                             setEmployeeInformation(content);
+                            getEmployeedId(`${content._id !== undefined ? content._id : ''}`)
                         }} 
                         data-tip="React-tooltip" 
                         data-for="Edit"
                     >
-                        <FiEdit />
+                        <MemoFiEdit />
                     </button>
                     <button
                         onClick={() => {
                             getTypeModal('Delete')
                             openNewEmployeeModal();
+                            getEmployeedId(`${content._id !== undefined ? content._id : ''}`)
+
                         }}
                         data-tip="React-tooltip" 
                         data-for="Delete"
                     >
-                        <FiTrash2 />
+                        <MemoFiTrash2 />
                     </button>
-                    <ReactTooltip
+                    <MemoReactTooltip
                         className="tooltip__bottom--dark"
                         id="Edit" 
                         place="bottom" 
@@ -66,8 +74,8 @@ const EmployeeCardGrid = ({ content, openNewEmployeeModal, getTypeModal, setEmpl
                         effect="solid"
                     >
                         Alterar informações
-                    </ReactTooltip>
-                    <ReactTooltip
+                    </MemoReactTooltip>
+                    <MemoReactTooltip
                         className="tooltip__bottom--dark"
                         id="Delete" 
                         place="bottom" 
@@ -75,7 +83,7 @@ const EmployeeCardGrid = ({ content, openNewEmployeeModal, getTypeModal, setEmpl
                         effect="solid"
                     >
                         Deletar funcionário
-                    </ReactTooltip>
+                    </MemoReactTooltip>
                 </div>
             </S.EmployeeCardActions>
         </S.EmployeeCardContainer>

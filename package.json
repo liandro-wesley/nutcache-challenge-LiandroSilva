@@ -3,6 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.23.0",
+    "cpf-cnpj-validator": "^1.0.3",
+    "env-cmd": "^10.1.0",
+    "react": "^17.0.2",
+    "react-countdown": "^2.3.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-scripts": "4.0.3",
+    "react-spring": "^9.0.0-rc.3",
+    "react-tooltip": "^4.2.21",
+    "styled-components": "^5.3.1",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
+  },
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -11,19 +26,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-icons": "^3.0.0",
-    "@types/styled-components": "^5.1.15",
-    "axios": "^0.23.0",
-    "env-cmd": "^10.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
-    "react-modal": "^3.14.3",
-    "react-scripts": "4.0.3",
-    "react-spring": "^9.0.0-rc.3",
-    "react-tooltip": "^4.2.21",
-    "styled-components": "^5.3.1",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
+    "@types/styled-components": "^5.1.15"
   },
   "scripts": {
     "start": "env-cmd -f ./.env react-scripts start",

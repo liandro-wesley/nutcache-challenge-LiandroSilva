@@ -1,7 +1,7 @@
-import React, { InputHTMLAttributes, memo, ReactNode, useState } from 'react';
-import { FiChevronDown } from 'react-icons/fi';
+import React, { InputHTMLAttributes, memo, ReactNode } from 'react';
 import * as S from './style';
 
+import { FiChevronDown } from 'react-icons/fi';
 
 const MemoFiChevronDown = memo(FiChevronDown);
 
@@ -23,19 +23,18 @@ type SelectInputProps = {
     optionList: OptionList[];
 } & InputHTMLAttributes<HTMLSelectElement>
 
-const SelectInput = ({ id, valid, onChange, value, required, placeholder, optionList}: SelectInputProps) => {
+const SelectInput = ({ id, valid, onChange, value, required, placeholder, optionList }: SelectInputProps) => {
 
-    return(
+    return (
         <S.SelectInputContainer>
             <MemoFiChevronDown />
             <S.SelectInputOptionContainer value={value} onChange={onChange} required={required}>
                 {
-                    optionList.map((option, index) => (
-                        <>
-                            <S.SelectInputOption key={option.data.id} value={option.data.placeholder}>
-                                {option.data.placeholder}
-                            </S.SelectInputOption>
-                        </>
+                    optionList.map((option) => (
+                        <S.SelectInputOption key={option.data.id} value={option.data.placeholder}>
+                            {option.data.placeholder}
+                        </S.SelectInputOption>
+
                     ))
                 }
             </S.SelectInputOptionContainer>

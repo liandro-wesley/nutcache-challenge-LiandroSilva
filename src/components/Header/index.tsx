@@ -20,10 +20,13 @@ const Header = ({ openNewEmployeeModal, typeModal }: HeaderProps) => {
                 <a href="/">
                     <img src={Logo} alt="Nutcache Brazil" />
                 </a>
-                <ButtonPrimary onClick={() => {
-                    typeModal('Create');
-                    openNewEmployeeModal();
-                }}>
+                <ButtonPrimary  
+                    uppercase={false}
+                    onClick={() => {
+                        typeModal('Create');
+                        openNewEmployeeModal();
+                    }}
+                >
                     Registre um funcionário
                 </ButtonPrimary>
             </S.HeaderContent>

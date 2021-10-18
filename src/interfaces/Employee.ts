@@ -1,13 +1,8 @@
-type Gender = {
-    genderIdentity: 'F' | 'M' | 'O'
-}
-
-
-export default interface Employees {
+export default interface Employee {
     _id?: string;
     name: string;
     email: string;
-    cpf: number | string;
+    cpf: string;
     team: string;
     gender: string;
     birthDate: string;

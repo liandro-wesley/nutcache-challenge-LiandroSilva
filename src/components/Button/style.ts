@@ -1,12 +1,18 @@
 import styled, { css } from 'styled-components';
 
-const ButtonReset = styled.button`
-    ${({ theme }) => css`
+type ButtonProps = {
+    uppercase: boolean;
+}
+
+const ButtonReset = styled.button<ButtonProps>`
+    ${({ theme, uppercase }) => css`
         font-size: ${theme.font.sizes.normal};
         font-weight: ${theme.font.weight.medium};
         font-family: ${theme.font.family};
         transition: all .2s;
         padding: 1.6rem;
+
+        text-transform: ${uppercase ? 'uppercase' : 'initial'};
 
         border: none;
         outline: none;
@@ -60,6 +66,20 @@ export const ButtonSuccess = styled(ButtonReset)`
         }
         &:focus {
             box-shadow: 0 0 0 3px ${theme.colors.green};
+        }
+    `}
+`;
+
+export const ButtonEdit = styled(ButtonReset)`
+    ${({ theme }) => css`
+        background-color: #F6C923;
+        color: ${theme.colors.white};
+
+        &:hover {
+            filter: brightness(.9);
+        }
+        &:focus {
+            box-shadow: 0 0 0 3px #F6C923;
         }
     `}
 `;
